@@ -1,17 +1,17 @@
-<?php 
+<?php
 	require "environment.php";
 	global $db;
 
 	$config = array();
 	if(ENVIRONMENT == "development"){
-		define("BASE_URL", "http://localhost:8080/estrutura_mvc/");
-		$config['dbname'] = "mvc";
+		define("BASE_URL", "http://localhost:8080/ead/");
+		$config['dbname'] = "ead";
 		$config['host'] = 'localhost';
 		$config['dbuser'] = 'root';
 		$config['dbpass'] = '';
 	}else{
 		define("BASE_URL", "http://meusite.com.br/");
-		$config['dbname'] = "mvc";
+		$config['dbname'] = "ead";
 		$config['host'] = 'localhost';
 		$config['dbuser'] = 'root';
 		$config['dbpass'] = '';

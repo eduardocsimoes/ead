@@ -1,39 +1,68 @@
-.widget{
-	margin-bottom: 20px;
-}
-.sugestaoitem{
-	height: 40px;
-	line-height: 40px;
-}
-.requisicaoitem{
-	height: 40px;
-	line-height: 40px;
-}
-.post_area{
-	border-bottom: 1px solid #CCC;
-}
-.post_area textarea{
-	height: 100px;
-}
-.postitem{
-	border-bottom: 1px solid #CCC;
-	padding-top: 10px;
-	padding-bottom: 10px;
-}
-.postitem img{
-	width: 400;
-	height: 500;
-}
-.postitem_texto{
+body{
+	margin: 0px;
 	background-color: #EEE;
-	padding: 10px;
 }
-.postitem_comentario{
-	display: none;	
+.topo{
+	display: block;
+	height: 40px;
+	background-color: #333;
+	color: #FFF;
 }
-.postitem_comentarios{
-
+.topo a{
+	text-decoration: none;
+	color: #FFF;
+}
+.topo-left{
+	float: left;
+	height: 40px;
+	line-height: 40px;
+	padding-right: 20px;
+	padding-left: 20px;	
+}
+.topo-right-usuario,
+.topo-right-botao{
+	float: right;
+	height: 40px;
+	line-height: 40px;
+	padding-right: 20px;
+	padding-left: 20px;
+}
+.topo-left:hover, .topo-right-usuario:hover, .topo-right-botao:hover{
+	background-color: #555;
+}
+.cursoitem{
+	width: 260px;
+	float: left;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 20px;
+	border: 2px solid #CCC;
+	border-radius: 10px;
+	text-align: center;
+}
+.cursoinfo{
+	height: 80px;
 	background-color: #CCC;
-	border: 1px solid #CCC;
-	padding: 5px;
+}
+.cursoinfo img{
+	float: left;
+	margin-right: 20px;
+	margin-top: 10px;
+	margin-left: 20px;
+}
+.cursoinfo h3{
+	margin: 0;
+	padding-top: 10px;
+}
+.curso_left{
+	float: left;
+	width: 30%;
+	min-height: 300px;
+	overflow-y: scroll;
+}
+.curso_right{
+	float: left;
+	width: 70%;
+	min-height: 300px;
+	overflow-y: scroll;
 }
