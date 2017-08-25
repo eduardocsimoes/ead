@@ -1,0 +1,12 @@
+//setInterval(alturatopo, 2000);
+
+/*$(function(){
+	var topo = $(document.body).offset().top;
+
+	alert(topo);
+})*/
+
+function alturatopo(){
+	var topo = $(window).offset().top;
+	alert(topo);
+}

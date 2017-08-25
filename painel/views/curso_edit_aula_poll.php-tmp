@@ -1,0 +1,28 @@
+<h2>Editar Aula - Questionario</h2>
+
+<form method="POST">
+	Pergunta:<br>
+	<input type="text" name="pergunta" value="<?php echo $aula['pergunta'];?>"><br><br>
+
+	Opcao 1:<br>
+	<input type="text" name="opcao1" value="<?php echo $aula['opcao1'];?>"><br><br>
+
+	Opcao 2:<br>
+	<input type="text" name="opcao2" value="<?php echo $aula['opcao2'];?>"><br><br>
+
+	Opcao 3:<br>
+	<input type="text" name="opcao3" value="<?php echo $aula['opcao3'];?>"><br><br>
+
+	Opcao 4:<br>
+	<input type="text" name="opcao4" value="<?php echo $aula['opcao4'];?>"><br><br>
+
+	Resposta:<br>
+	<select name="resposta">
+		<option value="1" <?php echo ($aula['resposta'] == 1)?"selected='selected'":'';?>>Opcao 1</option>
+		<option value="2" <?php echo ($aula['resposta'] == 2)?"selected='selected'":'';?>>Opcao 2</option>
+		<option value="3" <?php echo ($aula['resposta'] == 3)?"selected='selected'":'';?>>Opcao 3</option>
+		<option value="4" <?php echo ($aula['resposta'] == 4)?"selected='selected'":'';?>>Opcao 4</option>
+	</select>
+
+	<input type="submit" value="Salvar">
+</form>

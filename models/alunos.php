@@ -66,5 +66,27 @@
 		public function getId(){
 			return $this->info['id'];
 		}
+
+		public function getNumAulasAssistidas($id_curso){
+
+			$sql = "
+				SELECT id
+				FROM 
+					historico
+				WHERE 
+					id_aluno = '".($this->getId())."'
+				AND 
+					id_aula IN (SELECT aulas.id
+								FROM 
+									aulas
+								WHERE 
+									aulas.id_curso = :id_curso)";
+
+			$sql = $this->db->prepare($sql);
+			$sql->bindValue(":id_curso", $id_curso);
+			$sql->execute();
+
+			return $sql->rowCount();									
+		}
 	}
 ?>

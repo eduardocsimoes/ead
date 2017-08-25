@@ -67,6 +67,20 @@
 
 		public function getDescricao(){
 			return $this->info['descricao'];
-		}		
+		}
+
+		public function getId(){
+
+			return $this->info['id'];
+		}
+
+		public function getTotalAulas(){
+
+			$sql = "SELECT id FROM aulas WHERE id_curso ='".($this->getId())."'";
+			$sql = $this->db->prepare($sql);
+			$sql->execute();
+
+			return $sql->rowCount();
+		}
 	}
 ?>

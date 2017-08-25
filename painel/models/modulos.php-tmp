@@ -1,0 +1,68 @@
+<?php
+class Modulos extends model {
+
+	public function getModulos($id_curso) {
+
+		$array = array();
+
+		$sql = "SELECT * FROM modulos WHERE id_curso = :id_curso";
+		$sql = $this->db->prepare($sql);
+		$sql->bindValue(":id_curso", $id_curso);
+		$sql->execute();
+
+		if ($sql->rowCount() > 0) {
+			$array = $sql->fetchAll();
+
+			$aulas = new Aulas();
+
+			foreach ($array as $mChave => $mDados) {
+				$array[$mChave]['aulas'] = $aulas->getAulasDoModulo($mDados['id']);
+			}
+		}
+
+		return $array;
+	}
+
+	public function addModulo($id_curso, $nome_modulo) {
+
+		$sql = "INSERT INTO modulos SET id_curso = :id_curso, nome = :nome_modulo";
+		$sql = $this->db->prepare($sql);
+		$sql->bindValue(":id_curso", $id_curso);
+		$sql->bindValue(":nome_modulo", $nome_modulo);
+		$sql->execute();
+	}
+
+	public function getModulo($id) {
+
+		$array = array();
+
+		$sql = "SELECT * FROM modulos WHERE id = :id_modulo";
+		$sql = $this->db->prepare($sql);
+		$sql->bindValue(":id_modulo", $id);
+		$sql->execute();
+
+		if ($sql->rowCount() > 0) {
+			$array = $sql->fetch();
+		}
+
+		return $array;
+	}
+
+	public function delModulo($id_modulo) {
+
+		$sql = "DELETE FROM modulos WHERE id = :id_modulo";
+		$sql = $this->db->prepare($sql);
+		$sql->bindValue(":id_modulo", $id_modulo);
+		$sql->execute();
+	}
+
+	public function updateModulo($id_modulo, $nome_modulo) {
+
+		$sql = "UPDATE modulos SET nome = :nome_modulo WHERE id = :id_modulo";
+		$sql = $this->db->prepare($sql);
+		$sql->bindValue(":id_modulo", $id_modulo);
+		$sql->bindValue(":nome_modulo", $nome_modulo);
+		$sql->execute();
+	}
+}
+?>

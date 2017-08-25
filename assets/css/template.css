@@ -60,9 +60,31 @@ body{
 	min-height: 300px;
 	overflow-y: scroll;
 }
+.curso_left a{
+	color: #000;
+	text-decoration: none;
+}
 .curso_right{
 	float: left;
 	width: 70%;
 	min-height: 300px;
 	overflow-y: scroll;
+}
+.modulo{
+	height: 30px;
+	line-height: 30px;
+	padding-left: 20px;
+	background-color: #BBB;
+}
+.aula{
+	height: 30px;
+	line-height: 30px;
+	padding-left: 30px;
+}
+.aula:hover{
+	background-color: #AAA;
+}
+.form_duvida textarea{
+	width: 100%;
+	height: 150px;
 }
